@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "heroku-postbuild": "cd client_admin && npm install && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=FALSE npm install --prefix client_admin && npm run build --prefix client_admin"
   },
   "keywords": [],
   "author": "",
