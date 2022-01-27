@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BaseUrl = "https://shooping-app04.herokuapp.com/";
+const BaseUrl = "https://shopping-app04.herokuapp.com/";
 let Token = null;
 if (
   localStorage.getItem("persist:root") &&
