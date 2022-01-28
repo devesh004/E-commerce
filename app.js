@@ -18,9 +18,9 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-// app.get("/", (req, res) => {
-//   res.send("HOME PAGE");
-// });
+app.get("/", (req, res) => {
+  res.send("HOME PAGE");
+});
 
 app.use("/users", userRoute);
 app.use("/auth", authRoute);
@@ -29,9 +29,11 @@ app.use("/orders", orderRoute);
 app.use("/checkout", stripeRoute);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "client_admin", "build")));
+  app.use(express.static("client_admin/build"));
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client_admin", "build", "index.html"));
+    res.sendFile(
+      path.resolve(__dirname, "client_admin", "build", "index.html")
+    );
   });
 }
 
