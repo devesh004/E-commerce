@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
-import { userRequest } from "../requestMethods";
+import { publicRequest } from "../requestMethods";
 import { Link, useNavigate } from "react-router-dom";
 
 const KEY = process.env.REACT_APP_STRIPE;
@@ -171,7 +171,7 @@ const Cart = () => {
     const requestFun = async () => {
       try {
         // console.log("out-1");
-        const res = await userRequest.post("checkout/payment", {
+        const res = await publicRequest.post("checkout/payment", {
           token: stripeToken,
         });
         // console.log("out-2");

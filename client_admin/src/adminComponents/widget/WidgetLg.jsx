@@ -85,20 +85,21 @@ const WidgetLg = () => {
             <WidgetTableElement>Status</WidgetTableElement>
           </WidgetTableRow>
 
-          {orders.map((order) => {
-            return (
-              <WidgetTableRow key={order._id}>
-                <WidgetTableUser>
-                  <Username>{order.userId}</Username>
-                </WidgetTableUser>
-                <WidgetDate>{format(order.createdAt)}</WidgetDate>
-                <WidgetAmount>${order.amount}</WidgetAmount>
-                <WidgetStatus>
-                  <StatusButton type={order.status} />
-                </WidgetStatus>
-              </WidgetTableRow>
-            );
-          })}
+          {orders &&
+            orders.map((order) => {
+              return (
+                <WidgetTableRow key={order._id}>
+                  <WidgetTableUser>
+                    <Username>{order.userId}</Username>
+                  </WidgetTableUser>
+                  <WidgetDate>{format(order.createdAt)}</WidgetDate>
+                  <WidgetAmount>${order.amount}</WidgetAmount>
+                  <WidgetStatus>
+                    <StatusButton type={order.status} />
+                  </WidgetStatus>
+                </WidgetTableRow>
+              );
+            })}
         </tbody>
       </WidgetTable>
     </Container>

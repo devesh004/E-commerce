@@ -50,7 +50,7 @@ router.post("/login", async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: "3d" }
     );
-    console.log(others);
+    // console.log(others);
     res.status(200).json({ ...others, accessToken });
   } catch (err) {
     console.log(err);
@@ -59,7 +59,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.get("/logout", (req, res, next) => {
-  console.log("LOGOUT");
+  // console.log("LOGOUT");
   req.headers.token = "";
   res.status(200).json("Logged Out Successfully!");
 });
