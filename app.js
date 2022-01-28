@@ -8,6 +8,7 @@ const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
 const orderRoute = require("./routes/order");
 const stripeRoute = require("./routes/stripe");
+const path = require("path");
 const cors = require("cors");
 mongoose
   .connect(process.env.DB_URL)
@@ -17,9 +18,9 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("HOME PAGE");
-});
+// app.get("/", (req, res) => {
+//   res.send("HOME PAGE");
+// });
 
 app.use("/users", userRoute);
 app.use("/auth", authRoute);
