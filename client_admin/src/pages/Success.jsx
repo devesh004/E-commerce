@@ -47,7 +47,7 @@ const Success = () => {
     >
       {orderId
         ? `Order has been created successfully. Your order number is ${orderId} ..Happy Shopping`
-        : `Successfull. Your order is being prepared...`}
+        : `Something went wrong. Please order again sorry for inconvience...`}
       <Link style={{ marginTop: "40px" }} to="/">
         Go to Homepage
       </Link>

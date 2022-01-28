@@ -14,7 +14,7 @@ router.post("/payment", async (req, res) => {
       source: id,
       description: "5% off on each product",
     });
-    // console.log("CHARGE IS ", charge);
+    console.log("CHARGE IS ", charge);
     res.status(200).json(charge);
   } catch (err) {
     console.log(err);

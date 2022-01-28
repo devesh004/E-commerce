@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let BaseUrl = "https://shopping-app04.herokuapp.com/api";
+let BaseUrl = "https://shopping-app04.herokuapp.com/api/";
 if (process.env.NODE_ENV === "development") {
   BaseUrl = "http://localhost:3000/api/";
 }

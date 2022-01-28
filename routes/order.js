@@ -12,7 +12,7 @@ router.post("/", verifyToken, async (req, res) => {
   // console.log(req.body);
   const newOrder = new Order(req.body);
   try {
-    console.log("YOU TRIED WELL ENOUGH!");
+    // console.log("YOU TRIED WELL ENOUGH!");
     const savedOrder = await newOrder.save();
     res.status(200).json(savedOrder);
   } catch (err) {
