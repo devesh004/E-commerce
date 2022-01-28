@@ -18,6 +18,7 @@ import {
   deleteUserStart,
   deleteUserSuccess,
   deleteUserFailure,
+  updateCurrentUser,
 } from "./userRedux";
 import {
   getProductFailure,
@@ -44,6 +45,7 @@ import {
   updateOrderStart,
   updateOrderSuccess,
   updateOrderFailure,
+  emptyOrders,
 } from "./orderRedux";
 import { publicRequest, userRequest } from "../requestMethods";
 
@@ -51,6 +53,7 @@ export const logoutUser = async (dispatch) => {
   try {
     const res = await publicRequest.get("/auth/logout");
     dispatch(logout());
+    dispatch(emptyOrders());
   } catch (err) {
     console.log(err);
   }
@@ -147,12 +150,15 @@ export const addUser = async (user, dispatch) => {
   }
 };
 
-export const updateUser = async (user, id, dispatch) => {
+export const updateUser = async (user, id, dispatch, current) => {
   dispatch(updateUserStart());
   try {
     const res = await userRequest.put(`/users/${id}`, user);
     const Updateduser = res.data;
     dispatch(updateUserSuccess(Updateduser, id));
+    if (current === "current") {
+      dispatch(updateCurrentUser(Updateduser));
+    }
   } catch (err) {
     dispatch(updateUserFailure());
   }

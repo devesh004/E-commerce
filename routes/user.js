@@ -40,8 +40,10 @@ router.put("/:id", verifyTokenAndAuth, async (req, res) => {
       },
       { new: true }
     );
+    // console.log("UPDATED USER", updatedUser);
     res.status(200).json(updatedUser);
   } catch (err) {
+    console.log("HERE IS THE ERROR ", err);
     res.status(500).json(err);
   }
 });

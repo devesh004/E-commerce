@@ -61,7 +61,8 @@ const Button = styled.button`
   }
 `;
 const WidgetSm = () => {
-  const users = useSelector((state) => state.user.users).slice(0, 5);
+  let users = useSelector((state) => state.user.users);
+  users = users.slice(0, 5);
   const dispatch = useDispatch();
   useEffect(() => {
     getUsers(dispatch);

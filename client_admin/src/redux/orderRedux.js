@@ -59,6 +59,9 @@ const orderSlice = createSlice({
     emptyNotification: (state, action) => {
       state.notification = 0;
     },
+    emptyOrders: (state, action) => {
+      state.orders = [];
+    },
   },
 });
 
@@ -74,5 +77,6 @@ export const {
   updateOrderFailure,
   newNotification,
   emptyNotification,
+  emptyOrders,
 } = orderSlice.actions;
 export default orderSlice.reducer;

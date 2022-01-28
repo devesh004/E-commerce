@@ -15,7 +15,7 @@ const Products = ({ cat, filters, sort }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.products);
-  console.log(products);
+  // console.log(products);
   useEffect(() => {
     cat ? getProducts(dispatch, cat) : getProducts(dispatch, null);
   }, [cat]);
