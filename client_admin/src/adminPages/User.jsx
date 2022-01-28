@@ -191,9 +191,11 @@ const User = () => {
   );
   const { currentUser } = useSelector((state) => state.user);
   // console.log(path);
+  let createButton = true;
   if (path === "user") {
     user = currentUser;
     userId = currentUser._id;
+    createButton = false;
   }
 
   const [inputs, setInputs] = useState({});
@@ -263,9 +265,11 @@ const User = () => {
     <Container>
       <UserTitleContainer>
         <UserTitle>Edit User</UserTitle>
-        <Link to="/newUser">
-          <CreateUser>Create</CreateUser>
-        </Link>
+        {createButton && (
+          <Link to="/newUser">
+            <CreateUser>Create</CreateUser>
+          </Link>
+        )}
       </UserTitleContainer>
       <UserContainer>
         <UserShow>

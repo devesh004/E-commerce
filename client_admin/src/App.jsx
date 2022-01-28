@@ -16,6 +16,7 @@ import AdminProductList from "./adminPages/AdminProductList";
 import AdminProduct from "./adminPages/AdminProduct";
 import OrderList from "./adminPages/OrderList";
 import Order from "./adminPages/Order";
+import NotFound from "./NotFound";
 import {
   BrowserRouter as Router,
   Route,
