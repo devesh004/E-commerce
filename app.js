@@ -18,9 +18,9 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("HOME PAGE");
-});
+// app.get("/", (req, res) => {
+//   res.send("HOME PAGE");
+// });
 
 app.use("/users", userRoute);
 app.use("/auth", authRoute);
