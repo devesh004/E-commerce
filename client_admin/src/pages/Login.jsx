@@ -98,7 +98,7 @@ const Login = () => {
           </Button>
           {error && <Error>Something went wrong...</Error>}
           <Link>FORGET PASSWORD?</Link>
-          <Link>CREATE NEW ACCOUNT</Link>
+          <Link href="/register">CREATE NEW ACCOUNT</Link>
         </Form>
       </Wrapper>
     </Container>

@@ -63,16 +63,33 @@ export const login = async (dispatch, user) => {
     setTimeout(() => {
       logoutUser();
     }, 259200000);
+    console.log(res.data);
     dispatch(loginSuccess(res.data));
   } catch (err) {
     dispatch(loginFailure());
   }
 };
 
-export const getProducts = async (dispatch) => {
+export const registerUser = async (user, dispatch) => {
+  dispatch(registerUserStart());
+  try {
+    const res = await publicRequest.post("/auth/register", user);
+    setTimeout(() => {
+      logoutUser();
+    }, 259200000);
+    dispatch(registerUserSuccess(res.data));
+  } catch (err) {
+    console.log(err);
+    dispatch(registerUserFailure());
+  }
+};
+
+export const getProducts = async (dispatch, cat) => {
   dispatch(getProductStart());
   try {
-    const res = await publicRequest.get("/products/allProducts");
+    const res = await publicRequest.get(
+      `/products/allProducts?category=${cat}`
+    );
     dispatch(getProductSuccess(res.data));
   } catch (err) {
     dispatch(getProductFailure());
@@ -127,20 +144,6 @@ export const addUser = async (user, dispatch) => {
     dispatch(addUserSuccess(res.data));
   } catch (err) {
     dispatch(addUserFailure());
-  }
-};
-
-export const registerUser = async (user, dispatch) => {
-  dispatch(registerUserStart());
-  try {
-    const res = await publicRequest.post("/auth/register", user);
-    setTimeout(() => {
-      logoutUser();
-    }, 259200000);
-    dispatch(registerUserSuccess(res.data));
-  } catch (err) {
-    console.log(err);
-    dispatch(registerUserFailure());
   }
 };
 

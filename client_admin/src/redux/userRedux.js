@@ -23,6 +23,8 @@ const userSlice = createSlice({
     logout: (state) => {
       state.currentUser = null;
       state.users = [];
+      state.isFetching = false;
+      state.error = false;
     },
     getUsersStart: (state, action) => {
       state.isFetching = true;

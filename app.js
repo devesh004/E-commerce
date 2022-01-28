@@ -22,11 +22,11 @@ app.use(express.json());
 //   res.send("HOME PAGE");
 // });
 
-app.use("/users", userRoute);
-app.use("/auth", authRoute);
-app.use("/products", productRoute);
-app.use("/orders", orderRoute);
-app.use("/checkout", stripeRoute);
+app.use("/api/users", userRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/products", productRoute);
+app.use("/api/orders", orderRoute);
+app.use("/api/checkout", stripeRoute);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client_admin/build"));

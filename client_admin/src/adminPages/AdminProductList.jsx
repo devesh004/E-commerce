@@ -58,7 +58,7 @@ const ProductList = () => {
   const products = useSelector((state) => state.product.products);
   // console.log(products);
   useEffect(() => {
-    getProducts(dispatch);
+    getProducts(dispatch, null);
   }, [dispatch]);
 
   const handleDelete = (id) => {

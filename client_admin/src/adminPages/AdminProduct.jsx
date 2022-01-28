@@ -192,7 +192,7 @@ const Product = () => {
   });
   const [file, setFile] = useState(product.img);
   const [cat, setCat] = useState(product.categories);
-  const [col, setCol] = useState(product.colors);
+  const [col, setCol] = useState(product.color);
 
   const dispatch = useDispatch();
 
@@ -303,37 +303,42 @@ const Product = () => {
             <Input
               name="title"
               type="text"
-              placeholder={product.title}
+              value={inputs.title}
               onChange={handleChange}
             />
             <Label>Product Description</Label>
             <Input
               name="desc"
               type="text"
-              placeholder={product.desc}
+              value={inputs.desc}
               onChange={handleChange}
             />
             <Label>Categories</Label>
             <Input
               type="text"
-              placeholder={product.categories.map((cat) => cat)}
+              value={cat.map((cat) => cat)}
               onChange={handleCat}
             />
             <Label>Colors</Label>
             <Input
               type="text"
-              placeholder={product.color.map((col) => col)}
+              value={col.map((col) => col)}
               onChange={handleCol}
             />
             <Label>Price</Label>
             <Input
               name="price"
               type="text"
-              placeholder={product.price}
+              value={inputs.price}
               onChange={handleChange}
             />
             <Label>In Stock</Label>
-            <Select name="inStock" id="idStock" onChange={handleChange}>
+            <Select
+              name="inStock"
+              id="idStock"
+              onChange={handleChange}
+              value={inputs.inStock}
+            >
               <Option value="true">Yes</Option>
               <Option value="false">No</Option>
             </Select>

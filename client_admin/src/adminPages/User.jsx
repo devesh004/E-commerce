@@ -377,7 +377,12 @@ const User = () => {
               </UserUpdateItem>
               <UserUpdateItem>
                 <Label>Active</Label>
-                <ActiveSelect name="active" id="active" onChange={inputChange}>
+                <ActiveSelect
+                  name="active"
+                  id="active"
+                  onChange={inputChange}
+                  value={inputs.active}
+                >
                   <Option value="yes">Yes</Option>
                   <Option value="no">No</Option>
                 </ActiveSelect>

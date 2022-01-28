@@ -60,15 +60,18 @@ router.get("/allProducts", async (req, res) => {
     let products;
     if (queryNew) {
       products = await Product.find().sort({ createdAt: -1 }).limit(1);
-    } else if (qCategory) {
+    } else if (qCategory != "null") {
+      // console.log(qCategory, "Helo");
       products = await Product.find({
         categories: {
           $in: [qCategory],
         },
       });
     } else {
+      // console.log("Hello no cat");
       products = await Product.find();
     }
+
     res.status(200).json(products);
   } catch {
     res.status(500).json(err);
