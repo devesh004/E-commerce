@@ -9,7 +9,7 @@ const {
 } = require("./verifyToken");
 
 router.post("/", verifyToken, async (req, res) => {
-  // console.log(req.body);
+  console.log(req.body);
   const newOrder = new Order(req.body);
   try {
     // console.log("YOU TRIED WELL ENOUGH!");
