@@ -41,6 +41,7 @@ const Input = styled.input`
   color: #868282;
   border-radius: 5px;
 `;
+
 const UserGender = styled.div``;
 const GenInput = styled.input`
   margin-top: 15px;

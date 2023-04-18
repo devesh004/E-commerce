@@ -65,8 +65,8 @@ export const login = async (dispatch, user) => {
     const res = await publicRequest.post("/auth/login", user);
     // console.log(res.data);
     dispatch(loginSuccess(res.data));
-    setTimeout(() => {
-      logoutUser();
+    setInterval(() => {
+      logoutUser(dispatch);
     }, 259200000);
   } catch (err) {
     dispatch(loginFailure());
@@ -77,10 +77,11 @@ export const registerUser = async (user, dispatch) => {
   dispatch(registerUserStart());
   try {
     const res = await publicRequest.post("/auth/register", user);
-    setTimeout(() => {
-      logoutUser();
+    setInterval(() => {
+      logoutUser(dispatch);
     }, 259200000);
     dispatch(registerUserSuccess(res.data));
+    
   } catch (err) {
     console.log(err);
     dispatch(registerUserFailure());

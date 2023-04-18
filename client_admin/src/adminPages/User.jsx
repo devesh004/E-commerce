@@ -186,8 +186,11 @@ const User = () => {
   const navigate = useNavigate();
   const path = location.pathname.split("/")[1];
   let userId = location.pathname.split("/")[2];
-  let user = useSelector((state) =>
-    state.user.users.find((user) => user._id === userId)
+  let user = useSelector(
+    (state) =>
+      state.user &&
+      state.user.users &&
+      state.user.users.find((usr) => usr._id === userId)
   );
   const { currentUser } = useSelector((state) => state.user);
   // console.log(path);

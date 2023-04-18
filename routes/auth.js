@@ -67,7 +67,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get("/logout", (req, res, next) => {
+router.get("/logout", (req, res) => {
   // console.log("LOGOUT");
   req.headers.token = "";
   res.status(200).json("Logged Out Successfully!");

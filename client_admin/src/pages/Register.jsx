@@ -155,7 +155,7 @@ const Register = () => {
           <Label>Username</Label>
           <Input
             type="text"
-            placeholder="mota"
+            placeholder="devesh"
             name="username"
             onChange={handleChanges}
           />
@@ -164,7 +164,7 @@ const Register = () => {
           <Label>Full Name</Label>
           <Input
             type="text"
-            placeholder="Mota Singh"
+            placeholder="Devesh Shakya"
             name="name"
             onChange={handleChanges}
           />
@@ -173,7 +173,7 @@ const Register = () => {
           <Label>Email</Label>
           <Input
             type="email"
-            placeholder="mota@gmail.com"
+            placeholder="devesh@gmail.com"
             name="email"
             onChange={handleChanges}
           />

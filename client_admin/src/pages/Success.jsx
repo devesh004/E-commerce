@@ -8,12 +8,12 @@ import { newNotification } from "../redux/orderRedux";
 const Success = () => {
   const dispatch = useDispatch();
   const location = useLocation();
-  //in Cart.jsx I sent data and cart. Please check that page for the changes.(in video it's only data)
+  //in Cart.jsx I sent data and cart.
   const data = location.state.stripeData;
   const cart = location.state.cart;
   const currentUser = useSelector((state) => state.user.currentUser);
   const [orderId, setOrderId] = useState(null);
-  // console.log(cart.products);
+  console.log("Success Page   ", cart.products);
   useEffect(() => {
     const createOrder = async () => {
       try {

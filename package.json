@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client_admin"
+    "client": "cd client_admin && npm start",
+    "dev": "concurrently \"npm run start\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
@@ -20,5 +21,8 @@
     "mongoose": "^6.1.5",
     "nodemon": "^2.0.15",
     "stripe": "^8.195.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
   }
 }

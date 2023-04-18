@@ -1,19 +1,21 @@
 import axios from "axios";
 
-let BaseUrl = "https://shopping-app04.herokuapp.com/api/";
+let BaseUrl = "https://e-commerce-frontend-m0v7.onrender.com/api/";
 if (process.env.NODE_ENV === "development") {
-  BaseUrl = "http://localhost:3000/api/";
+  BaseUrl = "http://localhost:3001/api/";
 }
 
 let Token = null;
 if (
   localStorage.getItem("persist:root") &&
-  JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
-    .currentUser !== null
+  JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user) &&
+  JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currUser
 ) {
   Token = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
-    .currentUser.accessToken;
+    .currUser.accessToken;
 }
+
+console.log(Token);
 
 export const publicRequest = axios.create({
   baseURL: BaseUrl,
