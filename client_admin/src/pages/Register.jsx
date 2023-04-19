@@ -106,6 +106,15 @@ const Register = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    if (!file) {
+      const user = {
+        ...inputs,
+        img: "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png",
+      };
+      registerUser(user, dispatch);
+      return;
+    }
+
     const fileName = new Date().getTime() + file.name;
     const storage = getStorage(app);
     const storageRef = ref(storage, fileName);
