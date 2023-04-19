@@ -102,7 +102,6 @@ const Register = () => {
       return { ...prev, [e.target.name]: e.target.value };
     });
   };
-  // console.log(inputs);
 
   const submitHandler = (e) => {
     e.preventDefault();
