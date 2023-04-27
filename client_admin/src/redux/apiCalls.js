@@ -63,7 +63,7 @@ export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await publicRequest.post("/auth/login", user);
-    // console.log(res.data);
+    console.log(res.data);
     dispatch(loginSuccess(res.data));
     setInterval(() => {
       logoutUser(dispatch);
@@ -81,7 +81,6 @@ export const registerUser = async (user, dispatch) => {
       logoutUser(dispatch);
     }, 259200000);
     dispatch(registerUserSuccess(res.data));
-    
   } catch (err) {
     console.log(err);
     dispatch(registerUserFailure());

@@ -13,7 +13,7 @@ const Success = () => {
   const cart = location.state.cart;
   const currentUser = useSelector((state) => state.user.currentUser);
   const [orderId, setOrderId] = useState(null);
-  console.log("Success Page   ", cart.products);
+  // console.log("Success Page   ", cart.products);
   useEffect(() => {
     const createOrder = async () => {
       try {
@@ -23,7 +23,10 @@ const Success = () => {
           amount: cart.total,
           address: data.billing_details.address,
         });
+        // console.log("id", res.data._id);
+        // console.log("1", orderId);
         setOrderId(res.data._id);
+        // console.log("2", orderId);
         dispatch(emptyCard());
         dispatch(newNotification());
       } catch {}

@@ -9,10 +9,10 @@ let Token = null;
 if (
   localStorage.getItem("persist:root") &&
   JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user) &&
-  JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currUser
+  JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser
 ) {
   Token = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
-    .currUser.accessToken;
+    .currentUser.accessToken;
 }
 
 // console.log(Token);

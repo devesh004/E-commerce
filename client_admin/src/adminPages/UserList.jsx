@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-// import { getUsers } from "../redux/apiCalls";
+import { getUsers } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser } from "../redux/apiCalls";
 
@@ -46,9 +46,9 @@ const UserList = () => {
   // console.log(users);
 
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   getUsers(dispatch);
-  // }, [dispatch]);
+  useEffect(() => {
+    getUsers(dispatch);
+  }, [dispatch]);
 
   const handleDelete = (id) => {
     deleteUser(id, dispatch);

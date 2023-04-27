@@ -20,7 +20,7 @@ router.post("/register", async (req, res) => {
     const accessToken = jwt.sign(
       {
         id: savedUser._id,
-        isAdmin: savedUser.isAdmin,
+        // isAdmin: savedUser.isAdmin,
       },
       process.env.JWT_SECRET,
       { expiresIn: "3d" }
@@ -54,7 +54,7 @@ router.post("/login", async (req, res) => {
     const accessToken = jwt.sign(
       {
         id: user._id,
-        isAdmin: user.isAdmin,
+        // isAdmin: user.isAdmin,
       },
       process.env.JWT_SECRET,
       { expiresIn: "3d" }

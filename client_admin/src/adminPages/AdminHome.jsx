@@ -46,6 +46,7 @@ const AdminHome = () => {
         const list = res.data.sort((a, b) => {
           return a._id - b._id;
         });
+        console.log("list = ", list);
         list.map((item) => {
           setUserStats((prev) => [
             ...prev,
