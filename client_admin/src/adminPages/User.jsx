@@ -215,6 +215,18 @@ const User = () => {
   // console.log(inputs);
   const handleClick = (e) => {
     e.preventDefault();
+    if (!file) {
+      const user = { ...inputs, img: currentUser.img };
+      const id = userId;
+      if (currentUser._id === userId) {
+        updateUser(user, id, dispatch, "current");
+        navigate(`/user/${userId}`);
+      } else {
+        updateUser(user, id, dispatch);
+        navigate(`/adminUser/${userId}`);
+      }
+      return;
+    }
     const fileName = new Date().getTime() + file.name;
     const storage = getStorage(app);
     const storageRef = ref(storage, fileName);
